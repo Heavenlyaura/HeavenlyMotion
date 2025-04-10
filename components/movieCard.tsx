@@ -30,7 +30,9 @@ const MovieCard = ({
           }}
         />
 
-        <Text className="text-sm text-white font-bold mt-2" numberOfLines={1}>{title}</Text>
+        <Text className="text-sm text-white font-bold mt-2" numberOfLines={1}>
+          {title}
+        </Text>
         <View className="flex-row items-center justify-start gap-x-1">
           <Image source={icons.star} className="size-4" />
           <Text className="text-xs text-white font-bold uppercase">
@@ -40,7 +42,7 @@ const MovieCard = ({
 
         <View className="flex-row items-center justify-between">
           <Text className="text-xs text-light-300 font-medium mt-1">
-            {release_date.split("-")[0]}
+            {release_date?.split("-")[0]}
           </Text>
           {/* <Text className="text-xs font-medium text-light-300 uppercase">
             Movie
