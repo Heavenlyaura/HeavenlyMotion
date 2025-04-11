@@ -74,7 +74,7 @@ export default function Index() {
                       <TrendingCard movie={item} index={index} />
                     </View>
                   )}
-                  keyExtractor={(item) => item.movie_id.toString()}
+                  keyExtractor={(item) => `trending-${item.movie_id}`}
                   horizontal
                   showsHorizontalScrollIndicator={false}
                   ItemSeparatorComponent={() => <View className="w-4" />}
@@ -90,7 +90,7 @@ export default function Index() {
               <FlatList
                 data={movies}
                 renderItem={({ item }) => <MovieCard {...item} />}
-                keyExtractor={(item) => item.id.toString()}
+                keyExtractor={(item) => `latest-${item.id}`}
                 numColumns={3}
                 columnWrapperStyle={{
                   justifyContent: "space-between",
