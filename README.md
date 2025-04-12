@@ -16,6 +16,6 @@ The goal of building this application is to deepen my skills in mobile app devel
 
 # Useful Websites
 
-- [Kotlin Documentation](https://kotlinlang.org/docs/home.html)
-- [Firebase Firestore Documentation](https://firebase.google.com/docs/firestore)
-- [Jetpack Compose Guide](https://developer.android.com/jetpack/compose)
+- [React Native Documentation](https://reactnative.dev/docs/accessibilityinfo)
+- [Appwrite Documentation](https://appwrite.io/docs)
+- [Expo Documentation ](https://docs.expo.dev/)
