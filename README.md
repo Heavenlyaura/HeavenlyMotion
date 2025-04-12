@@ -1,50 +1,21 @@
-# Welcome to your Expo app 👋
+# Overview
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+MovieBase is a movie database application built to strengthen my understanding of modern mobile development. This project focuses on consuming external APIs, managing state, handling user input, and designing a responsive UI using React Native.
 
-## Get started
+The goal of building this application is to deepen my skills in mobile app development while working with real-world data and improving the overall user experience. By creating MovieBase, I am gaining hands-on experience with API integration, asynchronous JavaScript, and mobile UI/UX design principles using React Native and Appwrite as a Backend-as-a-Service (BaaS).
 
-1. Install dependencies
+[Software Demo Video](https://youtu.be/uWQ_xxCo82A)
 
-   ```bash
-   npm install
-   ```
+# Development Environment
 
-2. Start the app
+- **Code Editor:** Visual Studio Code
+- **Framework:** React Native
+- **Backend:** Appwrite (BaaS)
+- **Programming Languages:** JavaScript
+- **Tools & Libraries:** Fetch API, Git, GitHub
 
-   ```bash
-    npx expo start
-   ```
+# Useful Websites
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- [Kotlin Documentation](https://kotlinlang.org/docs/home.html)
+- [Firebase Firestore Documentation](https://firebase.google.com/docs/firestore)
+- [Jetpack Compose Guide](https://developer.android.com/jetpack/compose)
