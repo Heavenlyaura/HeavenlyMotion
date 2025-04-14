@@ -80,3 +80,11 @@ interface OauthButtonProps {
   icon: any;
   text: string;
 }
+
+interface AuthResults {
+  error: null | string;
+  type: string;
+  url: string;
+  secret: string | null;
+  userId: string | null;
+}
