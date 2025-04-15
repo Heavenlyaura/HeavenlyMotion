@@ -5,8 +5,8 @@ import { router } from "expo-router";
 
 const DATABASE_ID = process.env.EXPO_PUBLIC_APPWRITE_DATABASE_ID!;
 const METRIC_COLLECTION_ID =
-  process.env.EXPO_PUBLIC_APPWRITE_METRIC_COLLECTION_ID!;
-const USER_COLLECTION_ID = process.env.EXPO_PUBLIC_APPWRITE_USER_COLLECTION_ID!;
+  process.env.EXPO_PUBLIC_APPWRTIE_METRIC_COLLECTION_ID!;
+const USER_COLLECTION_ID = process.env.EXPO_PUBLIC_APPWRTIE_USER_COLLECTION_ID!;
 
 const client = new Client()
   .setEndpoint("https://cloud.appwrite.io/v1") // Your API Endpoint
@@ -141,7 +141,6 @@ const createUser = async (email: string, name: string, userId: string) => {
       }
     );
     return result;
-    
   } catch (error) {
     console.error("Error creating user:", error);
     await account.deleteSession("current");
