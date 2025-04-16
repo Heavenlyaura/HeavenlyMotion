@@ -15,7 +15,7 @@ const client = new Client()
 const database = new Databases(client);
 const account = new Account(client);
 
-export const updateSearchCount = async (query: string, movie: Movie) => {
+export async function updateSearchCount(query: string, movie: Movie) {
   try {
     const result = await database.listDocuments(
       DATABASE_ID,
@@ -51,11 +51,11 @@ export const updateSearchCount = async (query: string, movie: Movie) => {
   } catch (error) {
     console.error("Failed to list documents:", error);
   }
-};
+}
 
-export const getTrendingMovies = async (): Promise<
+export async function getTrendingMovies(): Promise<
   TrendingMovie[] | undefined
-> => {
+> {
   try {
     const result = await database.listDocuments(
       DATABASE_ID,
@@ -67,7 +67,7 @@ export const getTrendingMovies = async (): Promise<
     console.error("Failed to fetch trending movies:", error);
     return undefined;
   }
-};
+}
 
 // Function to handle OAuth2 authentication flow
 export async function startOAuthFlow(provider: any): Promise<void> {
@@ -117,7 +117,7 @@ export async function startOAuthFlow(provider: any): Promise<void> {
   }
 }
 
-const createUser = async (email: string, name: string, userId: string) => {
+async function createUser(email: string, name: string, userId: string) {
   try {
     // Check if the user already exists
     const existingUser = await database.listDocuments(
@@ -145,4 +145,17 @@ const createUser = async (email: string, name: string, userId: string) => {
     console.error("Error creating user:", error);
     await account.deleteSession("current");
   }
-};
+}
+
+export async function checkUserSession() {
+  try {
+    const session = await account.getSession("current");
+    if (session) {
+      const user = await account.get();
+      return user;
+    }
+  } catch (error) {
+    console.error("Error checking user session:", error);
+  }
+  return null;
+}
