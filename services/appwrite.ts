@@ -154,8 +154,20 @@ export async function checkUserSession() {
       const user = await account.get();
       return user;
     }
-  } catch (error) {
-    console.error("Error checking user session:", error);
+  } catch (error: unknown) {
+    // Only log unexpected errors
+    if (
+      typeof error === "object" &&
+      error !== null &&
+      "message" in error &&
+      "code" in error &&
+      (error as { message: string; code: number }).message !==
+        "User (role: guests) missing scope (account)" &&
+      (error as { message: string; code: number }).code !== 401
+    ) {
+      console.error("Error checking user session:", error);
+    }
   }
+
   return null;
 }

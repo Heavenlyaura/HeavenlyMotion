@@ -1,10 +1,11 @@
 import { View, Text, ImageBackground, Image } from "react-native";
-import React from "react";
-import { Tabs } from "expo-router";
+import React, { useEffect } from "react";
+import { router, Tabs } from "expo-router";
 import { images } from "@/constants/images";
 import { icons } from "@/constants/icons";
+import { checkUserSession } from "@/services/appwrite";
 
-const TabIcon = ({ focused, icon, title }: any) => {
+function TabIcon({ focused, icon, title }: any) {
   if (focused) {
     return (
       <ImageBackground
@@ -24,9 +25,33 @@ const TabIcon = ({ focused, icon, title }: any) => {
       </View>
     );
   }
-};
+}
 
-const _layout = () => {
+export default function Layout() {
+  const [isSessionChecked, setIsSessionChecked] = React.useState(false);
+
+  useEffect(() => {
+    const checkSession = async () => {
+      const userIsLoggedIn = await checkUserSession();
+      if (!userIsLoggedIn) {
+        router.replace("/auth/login");
+      } else {
+        setIsSessionChecked(true);
+      }
+    };
+    checkSession();
+  }, []);
+
+  if (!isSessionChecked) {
+    return (
+      <View className="flex-1 justify-center items-center bg-[#0f0d23]">
+        <Text className="text-secondary text-base font-semibold">
+          Loading...
+        </Text>
+      </View>
+    );
+  }
+
   return (
     <Tabs
       screenOptions={{
@@ -48,7 +73,8 @@ const _layout = () => {
           borderWidth: 1,
           borderColor: "#0f0d23",
         },
-      }}>
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
@@ -94,6 +120,4 @@ const _layout = () => {
       />
     </Tabs>
   );
-};
-
-export default _layout;
+}
