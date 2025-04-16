@@ -69,7 +69,7 @@ export async function getTrendingMovies(): Promise<
   }
 }
 
-// Function to handle OAuth2 authentication flow
+
 export async function startOAuthFlow(provider: any): Promise<void> {
   try {
     // Create a deep link URI that works across Expo environments

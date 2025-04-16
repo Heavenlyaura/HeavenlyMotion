@@ -16,6 +16,7 @@ import { fetchMovies } from "@/services/api";
 import MovieCard from "@/components/movieCard";
 import { getTrendingMovies } from "@/services/appwrite";
 import TrendingCard from "@/components/trendingCard";
+import { ID } from "react-native-appwrite";
 
 export default function Index() {
   const router = useRouter();
@@ -74,7 +75,7 @@ export default function Index() {
                       <TrendingCard movie={item} index={index} />
                     </View>
                   )}
-                  keyExtractor={(item) => `trending-${item.movie_id}`}
+                  keyExtractor={(item) => `${ID.unique()}${item.movie_id}`}
                   horizontal
                   showsHorizontalScrollIndicator={false}
                   ItemSeparatorComponent={() => <View className="w-4" />}
