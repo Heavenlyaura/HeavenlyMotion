@@ -27,7 +27,7 @@ function TabIcon({ focused, icon, title }: any) {
   }
 }
 
-export default function Layout() {
+export default function _layout() {
   const [isSessionChecked, setIsSessionChecked] = React.useState(false);
 
   useEffect(() => {
@@ -45,9 +45,7 @@ export default function Layout() {
   if (!isSessionChecked) {
     return (
       <View className="flex-1 justify-center items-center bg-[#0f0d23]">
-        <Text className="text-secondary text-base font-semibold">
-          Loading...
-        </Text>
+        <Text className="text-white text-base font-semibold">Loading...</Text>
       </View>
     );
   }

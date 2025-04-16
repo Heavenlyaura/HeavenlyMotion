@@ -104,13 +104,15 @@ export async function startOAuthFlow(provider: any): Promise<void> {
         const user = await account.get();
         const create = await createUser(user.email, user.name, userId);
         if (create) {
-          router.push("/");
+          router.replace("/");
+          return;
         }
       } catch (error) {
         console.error("User creation failed, deleting session:", error);
       }
     } else {
       console.log("OAuth authentication failed");
+      return;
     }
   } catch (error) {
     console.error("Error during OAuth flow", error);
